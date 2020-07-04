@@ -12,10 +12,11 @@ public class MainActivity extends AppCompatActivity {
     public void convertCurrency(View view) {
         double exchangeRate = 1.12;
         EditText euroEditText = (EditText) findViewById(R.id.euroEditText);
+        String euroString = euroEditText.getText().toString();
 
-        double dollarAmount = Math.round((Double.parseDouble(euroEditText.getText().toString()) * exchangeRate) * 100.0) / 100.0;
+        double dollarAmount = Math.round((Double.parseDouble(euroString) * exchangeRate) * 100.0) / 100.0;
 
-        Toast.makeText(this, String.valueOf(dollarAmount), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "€" + euroString + " is $" + String.valueOf(dollarAmount), Toast.LENGTH_SHORT).show();
     }
 
     @Override
